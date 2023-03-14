@@ -37,6 +37,7 @@ const { createApp } = Vue
         ],
 
         activeIndex: 0,
+        timing : ''
         
       }
     },
@@ -63,12 +64,15 @@ const { createApp } = Vue
         },
 
         autoplay(){
-            const v = setInterval( this.nextImage ,3000)
+            this.timing = setInterval( this.nextImage ,3000)
         },
 
+        stopAutoplay(){
+            clearInterval(this.timing)
+        }
         
     },
-    
+
     mounted() {
         this.autoplay()
     },
