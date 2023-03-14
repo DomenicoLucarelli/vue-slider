@@ -60,9 +60,18 @@ const { createApp } = Vue
 
         changeAtClick(indice){
            this.activeIndex = indice
-        }
+        },
 
+        autoplay(){
+            const v = setInterval( this.nextImage ,3000)
+        },
+
+        
     },
-  }).mount('#app')
+    
+    mounted() {
+        this.autoplay()
+    },
+}).mount('#app')
 
 
