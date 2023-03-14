@@ -37,6 +37,7 @@ const { createApp } = Vue
         ],
 
         activeIndex: 0,
+        
       }
     },
 
@@ -55,6 +56,10 @@ const { createApp } = Vue
             if(this.activeIndex < 0){
                 this.activeIndex = this.slides.length - 1;
             }
+        },
+
+        changeAtClick(indice){
+           this.activeIndex = indice
         }
 
     },
